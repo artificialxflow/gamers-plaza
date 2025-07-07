@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گیمرز پلازا | صفحه اصلی</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a 0%, #6d28d9 100%);
+      min-height: 100vh;
+      color: #fff;
+    }
+    .navbar {
+      background: rgba(0,0,0,0.8);
+      border-bottom: 1px solid #a78bfa33;
+      backdrop-filter: blur(8px);
+    }
+    .hero-section {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      background: #18181b;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+      transition: opacity 1s;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, #000a 70%, transparent 100%);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin-right: 5vw;
+    }
+    .gradient-text {
+      background: linear-gradient(90deg, #06b6d4, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+    .section-subtitle {
+      color: #a3a3a3;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .card-bg {
+      background: rgba(31, 41, 55, 0.7);
+      border: 1px solid #33415599;
+      border-radius: 1rem;
+      box-shadow: 0 4px 24px #0002;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .card-bg:hover {
+      transform: scale(1.04);
+      border-color: #06b6d4;
+    }
+    .gradient-btn {
+      background: linear-gradient(90deg, #06b6d4, #a78bfa);
+      color: #fff;
+      border: none;
+      border-radius: 0.75rem;
+      padding: 0.75rem 2rem;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .gradient-btn:hover {
+      background: linear-gradient(90deg, #0891b2, #7c3aed);
+      transform: scale(1.05);
+    }
+    .footer {
+      background: rgba(0,0,0,0.8);
+      border-top: 1px solid #33415599;
+      color: #a3a3a3;
+      padding: 3rem 0 1rem 0;
+    }
+    .footer .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      background: linear-gradient(90deg, #06b6d4, #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    .footer .social-btn {
+      width: 40px; height: 40px;
+      background: #334155;
+      border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: #fff;
+      margin-left: 0.5rem;
+      transition: background 0.2s;
+    }
+    .footer .social-btn:hover { background: #06b6d4; color: #fff; }
+    .newsletter-input {
+      background: #334155;
+      border: 1px solid #475569;
+      color: #fff;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1rem;
+      width: 100%;
+      margin-left: 0.5rem;
+    }
+    .newsletter-btn {
+      background: linear-gradient(90deg, #06b6d4, #a78bfa);
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.5rem 1.5rem;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    .newsletter-btn:hover { background: linear-gradient(90deg, #0891b2, #7c3aed); }
+    .card-img-container {
+      width: 100%;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      border-radius: 1rem 1rem 0 0;
+      background: #18181b;
+    }
+    .card-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="me-2"><svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 24v-4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="12" r="4" stroke="#a78bfa" stroke-width="2"/></svg></span>
+        <span class="logo">گیمرز پلازا</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="منو">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="#">خانه</a></li>
+          <li class="nav-item"><a class="nav-link" href="shop.html">فروشگاه</a></li>
+          <li class="nav-item"><a class="nav-link" href="#marketplace">مارکت‌پلیس</a></li>
+          <li class="nav-item"><a class="nav-link" href="#guides">راهنماها</a></li>
+          <li class="nav-item"><a class="nav-link" href="#blog">وبلاگ</a></li>
+        </ul>
+        <button class="btn gradient-btn ms-3">ورود</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center" id="hero">
+    <img src="https://images.pexels.com/photos/7862602/pexels-photo-7862602.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080" class="hero-bg" id="hero-bg" alt="Hero Background">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="display-3 fw-bold mb-4">آیتم‌های اختصاصی بازی</h1>
+      <p class="lead mb-4">بهترین اسکین‌ها و آیتم‌های نادر را پیدا کنید</p>
+      <a href="shop.html" class="btn gradient-btn btn-lg">مشاهده فروشگاه</a>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-5" style="background:rgba(0,0,0,0.5)">
+    <div class="container">
+      <div class="row text-center g-4">
+        <div class="col-6 col-md-3">
+          <div class="mx-auto mb-3" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="32" fill="none"><circle cx="16" cy="16" r="14" stroke="#fff" stroke-width="2"/><path d="M16 10v4l3 3" stroke="#fff" stroke-width="2"/></svg>
+          </div>
+          <div class="fs-2 fw-bold">50K+</div>
+          <div class="text-secondary">کاربر فعال</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="mx-auto mb-3" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="32" fill="none"><rect x="6" y="10" width="20" height="12" rx="3" stroke="#fff" stroke-width="2"/><path d="M10 10V8a6 6 0 0 1 12 0v2" stroke="#a78bfa" stroke-width="2"/></svg>
+          </div>
+          <div class="fs-2 fw-bold">100K+</div>
+          <div class="text-secondary">آیتم فروخته شده</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="mx-auto mb-3" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="32" fill="none"><path d="M16 4l4 8h8l-6.5 5.5L23 28l-7-4-7 4 1.5-10.5L4 12h8z" stroke="#fff" stroke-width="2"/></svg>
+          </div>
+          <div class="fs-2 fw-bold">500+</div>
+          <div class="text-secondary">مسابقه برگزار شده</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="mx-auto mb-3" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+            <svg width="32" height="32" fill="none"><path d="M16 2l4 8h8l-6.5 5.5L23 26l-7-4-7 4 1.5-10.5L2 10h8z" stroke="#fff" stroke-width="2"/><circle cx="16" cy="16" r="4" stroke="#a78bfa" stroke-width="2"/></svg>
+          </div>
+          <div class="fs-2 fw-bold">4.9</div>
+          <div class="text-secondary">امتیاز کاربران</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- آیتم‌های ویژه -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">آیتم‌های ویژه</h2>
+        <p class="section-subtitle">بهترین و محبوب‌ترین آیتم‌های این هفته</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-3">
+            <div class="card-img-container mb-3">
+              <img src="https://images.pexels.com/photos/7862602/pexels-photo-7862602.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="اسکین افسانه‌ای AK-47" />
+            </div>
+            <h5 class="fw-bold mb-1">اسکین افسانه‌ای AK-47</h5>
+            <div class="text-secondary mb-2">کانتر استرایک</div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-info fw-bold">2,500,000 تومان</span>
+              <span class="text-warning">★ 4.8</span>
+            </div>
+            <button class="btn gradient-btn w-100">افزودن به سبد</button>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-3">
+            <div class="card-img-container mb-3">
+              <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="پوشش کاراکتر وایپر" />
+            </div>
+            <h5 class="fw-bold mb-1">پوشش کاراکتر وایپر</h5>
+            <div class="text-secondary mb-2">ولورانت</div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-info fw-bold">1,800,000 تومان</span>
+              <span class="text-warning">★ 4.9</span>
+            </div>
+            <button class="btn gradient-btn w-100">افزودن به سبد</button>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-3">
+            <div class="card-img-container mb-3">
+              <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="گلایدر نادر" />
+            </div>
+            <h5 class="fw-bold mb-1">گلایدر نادر</h5>
+            <div class="text-secondary mb-2">فورتنایت</div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-info fw-bold">950,000 تومان</span>
+              <span class="text-warning">★ 4.7</span>
+            </div>
+            <button class="btn gradient-btn w-100">افزودن به سبد</button>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-3">
+            <div class="card-img-container mb-3">
+              <img src="https://images.pexels.com/photos/7862602/pexels-photo-7862602.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="شخصیت میتیک" />
+            </div>
+            <h5 class="fw-bold mb-1">شخصیت میتیک</h5>
+            <div class="text-secondary mb-2">موبایل لجندز</div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="text-info fw-bold">3,200,000 تومان</span>
+              <span class="text-warning">★ 5.0</span>
+            </div>
+            <button class="btn gradient-btn w-100">افزودن به سبد</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-5" style="background:rgba(0,0,0,0.3)">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">خدمات ما</h2>
+        <p class="section-subtitle">همه چیز که یک گیمر نیاز دارد در یک جا</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-4 text-center">
+            <div class="mx-auto mb-4" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" fill="none"><rect x="6" y="10" width="20" height="12" rx="3" stroke="#fff" stroke-width="2"/><path d="M10 10V8a6 6 0 0 1 12 0v2" stroke="#a78bfa" stroke-width="2"/></svg>
+            </div>
+            <h5 class="fw-bold mb-2">فروشگاه آیتم‌ها</h5>
+            <p class="text-secondary mb-3">بهترین آیتم‌های درون بازی با قیمت‌های عالی</p>
+            <a href="#shop" class="text-info">بیشتر بخوانید ←</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-4 text-center">
+            <div class="mx-auto mb-4" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" fill="none"><circle cx="16" cy="16" r="14" stroke="#fff" stroke-width="2"/><path d="M16 10v4l3 3" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <h5 class="fw-bold mb-2">مارکت‌پلیس</h5>
+            <p class="text-secondary mb-3">خرید و فروش آیتم‌ها بین گیمرها</p>
+            <a href="#marketplace" class="text-info">بیشتر بخوانید ←</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-4 text-center">
+            <div class="mx-auto mb-4" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" fill="none"><rect x="8" y="8" width="16" height="16" rx="4" stroke="#fff" stroke-width="2"/><path d="M12 12h8v8h-8z" stroke="#a78bfa" stroke-width="2"/></svg>
+            </div>
+            <h5 class="fw-bold mb-2">راهنمای بازی‌ها</h5>
+            <p class="text-secondary mb-3">راهنمای کامل و جامع انواع بازی‌ها</p>
+            <a href="#guides" class="text-info">بیشتر بخوانید ←</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="card-bg p-4 text-center">
+            <div class="mx-auto mb-4" style="width:64px;height:64px;background:linear-gradient(90deg,#06b6d4,#a78bfa);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg width="32" height="32" fill="none"><path d="M16 4l4 8h8l-6.5 5.5L23 28l-7-4-7 4 1.5-10.5L4 12h8z" stroke="#fff" stroke-width="2"/></svg>
+            </div>
+            <h5 class="fw-bold mb-2">مسابقات آنلاین</h5>
+            <p class="text-secondary mb-3">شرکت در مسابقات و برنده جوایز شوید</p>
+            <a href="#" class="text-info">بیشتر بخوانید ←</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- آخرین اخبار -->
+  <section class="py-5" id="blog">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="section-title">آخرین اخبار</h2>
+        <p class="section-subtitle">جدیدترین اخبار و مقالات دنیای گیمینگ</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="card-bg overflow-hidden">
+            <div class="card-img-container">
+              <img src="https://images.pexels.com/photos/7862602/pexels-photo-7862602.jpeg?auto=compress&cs=tinysrgb&w=400&h=200" alt="News" />
+            </div>
+            <div class="p-3">
+              <div class="d-flex align-items-center mb-2">
+                <span class="text-info small ms-3">1403/08/15</span>
+                <span class="text-secondary small">گیمینگ</span>
+              </div>
+              <h5 class="fw-bold mb-2">بررسی جدیدترین آپدیت بازی محبوب</h5>
+              <p class="text-secondary mb-3">در این مقاله به بررسی جدیدترین آپدیت بازی محبوب و تغییرات مهم آن می‌پردازیم...</p>
+              <a href="#" class="text-info">ادامه مطلب ←</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-bg overflow-hidden">
+            <div class="card-img-container">
+              <img src="https://images.pexels.com/photos/442576/pexels-photo-442576.jpeg?auto=compress&cs=tinysrgb&w=400&h=200" alt="News" />
+            </div>
+            <div class="p-3">
+              <div class="d-flex align-items-center mb-2">
+                <span class="text-info small ms-3">1403/08/14</span>
+                <span class="text-secondary small">مسابقات</span>
+              </div>
+              <h5 class="fw-bold mb-2">مسابقات جدید گیمرز پلازا</h5>
+              <p class="text-secondary mb-3">اطلاعات کامل درباره مسابقات جدید و نحوه شرکت در آن‌ها را اینجا بخوانید...</p>
+              <a href="#" class="text-info">ادامه مطلب ←</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="card-bg overflow-hidden">
+            <div class="card-img-container">
+              <img src="https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=400&h=200" alt="News" />
+            </div>
+            <div class="p-3">
+              <div class="d-flex align-items-center mb-2">
+                <span class="text-info small ms-3">1403/08/13</span>
+                <span class="text-secondary small">راهنما</span>
+              </div>
+              <h5 class="fw-bold mb-2">راهنمای کامل شروع بازی</h5>
+              <p class="text-secondary mb-3">اگر تازه وارد دنیای گیمینگ شده‌اید، این راهنما را از دست ندهید...</p>
+              <a href="#" class="text-info">ادامه مطلب ←</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-3 mb-4 mb-md-0">
+          <div class="d-flex align-items-center mb-3">
+            <span class="me-2"><svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 24v-4a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v4" stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="12" r="4" stroke="#a78bfa" stroke-width="2"/></svg></span>
+            <span class="logo">گیمرز پلازا</span>
+          </div>
+          <p>بهترین پلتفرم برای گیمرها - از خرید آیتم‌ها تا مارکت‌پلیس و راهنماها</p>
+          <div>
+            <a href="#" class="social-btn"><span>T</span></a>
+            <a href="#" class="social-btn"><span>I</span></a>
+            <a href="#" class="social-btn"><span>D</span></a>
+          </div>
+        </div>
+        <div class="col-12 col-md-3 mb-4 mb-md-0">
+          <h6 class="fw-bold mb-3">خدمات</h6>
+          <ul class="list-unstyled">
+            <li><a href="#shop" class="text-secondary">فروشگاه آیتم‌ها</a></li>
+            <li><a href="#marketplace" class="text-secondary">مارکت‌پلیس</a></li>
+            <li><a href="#guides" class="text-secondary">راهنماها</a></li>
+            <li><a href="#" class="text-secondary">مسابقات</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3 mb-4 mb-md-0">
+          <h6 class="fw-bold mb-3">پشتیبانی</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-secondary">تماس با ما</a></li>
+            <li><a href="#" class="text-secondary">سوالات متداول</a></li>
+            <li><a href="#" class="text-secondary">راهنمای خرید</a></li>
+            <li><a href="#" class="text-secondary">قوانین و مقررات</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-3">
+          <h6 class="fw-bold mb-3">خبرنامه</h6>
+          <p>از آخرین اخبار و تخفیف‌ها باخبر شوید</p>
+          <form class="d-flex">
+            <input type="email" class="newsletter-input" placeholder="ایمیل شما">
+            <button type="submit" class="newsletter-btn ms-2">عضویت</button>
+          </form>
+        </div>
+      </div>
+      <div class="text-center mt-4 pt-3 border-top border-secondary">
+        <small>© 1403 گیمرز پلازا. تمامی حقوق محفوظ است.</small>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
